@@ -11,6 +11,3 @@ navbar:
 
 footer:
   columns: 3
-  style:
-    top: "bg-secondary"
-    bottom: "bg-success"

@@ -36,3 +36,23 @@ main {
 .navbar-i18n .nav-link:hover {
   color: $green !important;
 }
+
+.bg-theme-color {
+  --bs-bg-opacity: 1;
+  background-color: rgba($teal,var(--bs-bg-opacity))!important;
+}
+
+.bg-theme-dark {
+  --bs-bg-opacity: 1;
+  background-color: rgba($gray-700,var(--bs-bg-opacity))!important;
+}
+
+.bg-footer-top {
+  --bs-bg-opacity: 1;
+  background-color: rgba($gray-700,var(--bs-bg-opacity))!important;
+}
+
+.bg-footer-bottom {
+  --bs-bg-opacity: 1;
+  background-color: rgba($teal,var(--bs-bg-opacity))!important;
+}
