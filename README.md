@@ -6,6 +6,18 @@ Tested with Hugo `v0.83.0` or higher.
 
 ## Installation
 
+Add as Git submodule to a Hugo project directory:
+
+```
+git submodule add https://github.com/Georepublic/hugo-theme-georepublic path/to/theme
+```
+
+Update and initialize available submodules with:
+
+```
+git submodule update --init --recursive
+```
+
 Install dependencies with npm:
 
 ```
