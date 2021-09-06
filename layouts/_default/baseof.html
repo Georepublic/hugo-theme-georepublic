@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="h-100">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{- partial "base/ldjson" . -}}
+
+    <title>{{ block "title" . }}
+      {{- .Site.Title -}}
+    {{ end }}</title>
+
+    {{- partial "base/favicon" . -}}
+
+    {{- template "_internal/google_analytics.html" . -}}
+    {{- template "_internal/schema.html" . -}}
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+
+    {{- with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end -}}
+    {{- with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end -}}
+
+    {{- with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end -}}
+    {{- with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end -}}
+
+    {{- partial "base/styles" . -}}
+
+    {{ with .OutputFormats.Get "rss" -}}
+      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+  </head>
+
+  <body class="d-flex flex-column">
+    <!-- Code that all your templates share, like a header -->
+    {{ block "header" . }}
+      <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+      {{ partial "base/navbar" . }}
+    {{ end }}
+
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+
+    {{ block "footer" . }}
+      <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+      {{ partial "base/footer" . }}
+    {{ end }}
+
+    {{ partial "base/scripts" . }}
+  </body>
+
+</html>

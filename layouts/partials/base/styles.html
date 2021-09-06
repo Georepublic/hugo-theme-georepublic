@@ -1,0 +1,6 @@
+{{- $styleSass := resources.Get "sass/main.scss" -}}
+{{- $styleCSS := $styleSass | resources.ToCSS (dict "targetPath" "css/style.css" "enableSourceMap" true) -}}
+{{- $styleMinified := $styleCSS | resources.Minify -}}
+{{- $styleFingerpinted := $styleMinified | resources.Fingerprint -}}
+
+<link rel="stylesheet" href="{{ $styleFingerpinted.RelPermalink }}" integrity="{{ $styleFingerpinted.Data.Integrity }}" crossorigin="anonymous">

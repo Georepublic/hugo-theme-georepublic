@@ -1,0 +1,27 @@
+latestPosts:
+  other: "最新の記事"
+
+prevPage:
+  other: "前のページ"
+
+nextPage:
+  other: "次のページ"
+
+readMore:
+  other: "続きを読む"
+
+404title:
+  other: "ページが見つかりません"
+
+404text:
+  other: "これはお探しのウェブページではありません。"
+
+ContactUs:
+  other: "お問い合わせ"
+
+AllRightsReserved:
+  other: "All rights reserved."
+
+footer:
+  summary:
+    other: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."

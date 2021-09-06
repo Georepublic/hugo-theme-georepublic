@@ -1,0 +1,69 @@
+// Custom Bootstrap syles
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+
+$white:    #fff;
+$gray-100: #f3f3f3;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #db3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #00b265;
+$teal:    #00ce35;
+$cyan:    #338ee8;
+
+// custom colors
+$grp_metal: #5d5d5d;
+$grp_muted: rgba(48, 48, 48, 0.6);
+
+$primary:       $green;
+$secondary:     $grp_metal;
+$success:       $teal;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$text-muted:    $grp_muted;
+
+// typography
+$font-family-serif: "Noto Sans", "Segoe UI", "Roboto", "Noto Color Emoji";
+$font-family-base: $font-family-serif;
+
+$display-font-sizes: (
+  1: 3rem,
+  2: 2.5rem,
+  3: 2rem,
+  4: 1.5rem,
+  5: 1rem,
+  6: 0.5rem
+);
+
+// navbar
+$dropdown-border-color:             rgba($white, .15);
+$dropdown-item-padding-y:           .45rem;
+
+$link-hover-color:                  $teal;
+$link-hover-decoration:             none;
+
+$dropdown-link-hover-color:         $teal;
+$dropdown-link-hover-bg:            none;
+
+$nav-tabs-link-active-color:        $gray-700;
+
+$navbar-light-color:                $gray-600;
+$navbar-light-hover-color:          $teal;

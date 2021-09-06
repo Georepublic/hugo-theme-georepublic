@@ -1,0 +1,16 @@
+# This file defines theme parameter defaults
+#
+# Example:
+#
+# {{ .Site.Params.color | default .Site.Data.default.color }}
+#
+
+navbar:
+  style:
+    contact: "btn-outline-success"
+
+footer:
+  columns: 3
+  style:
+    top: "bg-secondary"
+    bottom: "bg-success"

@@ -1,0 +1,86 @@
+<footer>
+  <div class="{{ .Site.Params.footer.style.top | default .Site.Data.default.footer.style.top }} text-light pb-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <p class="text-left font-weight-bolder my-5">{{ i18n "footer.summary" }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-{{ .Site.Params.footer.columns | default .Site.Data.default.footer.columns }} g-4">
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <p><img src="/images/logo.svg" alt="{{ .Site.Title }}" title="{{ .Site.Title }}"></p>
+            <ul class="list-unstyled"> |
+              {{ if .Site.IsMultiLingual }}
+              {{ range .AllTranslations }}
+                <a class="small text-light" href="{{ .Permalink }}" class="nav-link">{{ .Language.LanguageName }}</a> |
+              {{ end }}
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+
+        {{ with .Site.Menus.bottom }}
+        {{ range . }}
+        <div class="col">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <h5 class="card-title text-uppercase border-bottom pb-2">{{ .Name }}</h5>
+              <p class="card-text mute">
+                {{ if .HasChildren }}
+                <ul class="list-unstyled">
+                  {{ range .Children }}
+                  <li class="mute"><a class="text-light" href="{{ .URL }}">{{ .Name }}</a></li>
+                  {{ end }}
+                </ul>
+                {{ else }}
+                {{/*  No items  */}}
+                {{ end }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="{{ .Site.Params.footer.style.bottom | default .Site.Data.default.footer.style.bottom }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <ul class="list-unstyled my-2 my-md-3">
+            <li class="list-inline-item  small text-light">&copy; {{ now.Year }} <a class="text-light" href="{{ .Site.BaseURL | relLangURL }}"> Georepublic</a>. {{ i18n "AllRightsReserved" }}</li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <ul class="list-unstyled my-0 my-md-3">
+            {{ range $.Site.Data.social }}
+            {{ if not .draft }}
+            <li class="list-inline-item small text-light"> <a class="text-light" href="{{ .href }}">
+              <svg class="feather ">
+                <use xlink:href="/elements/feather-sprite.svg#{{ .icon }}"/>
+              </svg>
+            </a></li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <ul class="list-unstyled my-2 my-md-3">
+          {{ range $index, $element := .Site.Menus.footer }}
+            <li class="list-inline-item small text-light"><a href="{{ .URL }}" class="text-light">{{ .Pre }} {{ .Name }}</a></li>
+          {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>

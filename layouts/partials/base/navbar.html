@@ -1,0 +1,68 @@
+<!-- Code that all your templates share, like a header -->
+{{ block "header" . }}
+  <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-light navbar-white bg-white pb-3">
+      <div class="container">
+
+        <a class="navbar-brand mt-4" href="{{ .Site.BaseURL | relLangURL }}">
+          <img src="/images/logo.svg" alt="{{ .Site.Title }}" title="{{ .Site.Title }}">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column align-items-end" id="navbarCollapse">
+          <!-- Top Navigation -->
+          <ul class="navbar-nav d-lg-flex d-none ml-auto small navbar-i18n">
+            {{ if .Site.IsMultiLingual }}
+            {{ range .AllTranslations }}
+            <li class="nav-item">
+              <a href="{{ .Permalink }}" class="nav-link">{{ .Language.LanguageName }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+            {{ with .Site.Menus.top }}
+            {{ range . }}
+            <li class="nav-item">
+              <a href="{{ .URL | relURL }}" class="nav-link">{{ .Name }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
+
+          <!-- Main Navigation -->
+          <ul class="navbar-nav ml-md-auto d-flex">
+            {{ with .Site.Menus.main }}
+            {{ range . }}
+            {{ if .HasChildren }}
+            <li class="nav-item dropdown ml-3">
+              <a class="nav-link dropdown-toggle font-weight-bolder" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+              <div class="dropdown-menu">
+                {{ range .Children }}
+                <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+              </div>
+            </li>
+            {{ else }}
+            <li class="nav-item font-weight-bolder ml-3">
+              <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+
+            {{ with .Site.GetPage "contact" }}
+            <li class="nav-item">
+              <a class="btn {{ .Site.Params.navbar.style.contact | default .Site.Data.default.navbar.style.contact }} rounded-pill ml-4" href="{{ .Permalink }}" role="button">{{ .Name }}</a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+{{ end }}

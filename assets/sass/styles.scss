@@ -1,0 +1,38 @@
+/* Custom page CSS
+-------------------------------------------------- */
+
+main {
+  min-height: 350px;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.feather-large {
+  width: 64px;
+  height: 64px;
+}
+
+.feather-center, .svg-center {
+  display: inline-flex;
+  align-self: center;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.navbar-i18n .nav-link:hover {
+  color: $green !important;
+}

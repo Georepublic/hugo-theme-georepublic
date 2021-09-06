@@ -1,0 +1,20 @@
+{
+  "name": "georepublic-theme",
+  "version": "1.0.0",
+  "description": "Theme for Georepublic websites",
+  "main": "index.js",
+  "scripts": {
+    "build": "make build-js && make build-css",
+    "clean": "rm -Rf ./node_modules ./static/elements",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Georepublic",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@popperjs/core": "^2.9.3",
+    "bootstrap": "^5.1.0",
+    "bootstrap-icons": "^1.5.0",
+    "feather-icons": "^4.28.0"
+  }
+}
