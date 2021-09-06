@@ -1,5 +1,5 @@
 name = "hugo-theme-georepublic"
-license = ""
+license = "Apache-2.0"
 licenselink = "./LICENSE"
 description = "Georepublic's basic Hugo theme"
 homepage = "https://github.com/Georepublic/hugo-theme-georepublic"
