@@ -39,7 +39,7 @@
             {{ range . }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown ml-3">
-              <a class="nav-link dropdown-toggle font-weight-bolder" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
+              <a class="nav-link dropdown-toggle fw-bolder" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ .Name }}</a>
               <div class="dropdown-menu">
                 {{ range .Children }}
                 <a class="dropdown-item" href="{{ .URL }}">{{ .Name }}</a>
@@ -47,7 +47,7 @@
               </div>
             </li>
             {{ else }}
-            <li class="nav-item font-weight-bolder ml-3">
+            <li class="nav-item fw-bolder ml-3">
               <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
             </li>
             {{ end }}

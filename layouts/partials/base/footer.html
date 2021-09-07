@@ -1,25 +1,31 @@
 <footer>
   <div class="bg-footer-top text-light pb-3 mt-5">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <p class="text-left font-weight-bolder my-5">{{ i18n "footer.summary" }}</p>
+      <div class="row row-cols-1 g-4 justify-content-center">
+        <div class="col col-lg-8">
+          <div class="card h-100 bg-transparent border-0">
+            <div class="card-body">
+              <p class="text-left font-weight-bolder my-3">{{ i18n "footer.summary" }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="container">
       <div class="row row-cols-1 row-cols-md-{{ .Site.Params.footer.columns | default .Site.Data.default.footer.columns }} g-4">
-        <div class="col">
+        <div class="col text-center">
           <div class="card h-100 bg-transparent border-0">
-            <p><img src="/images/logo.svg" alt="{{ .Site.Title }}" title="{{ .Site.Title }}"></p>
-            <ul class="list-unstyled"> |
-              {{ if .Site.IsMultiLingual }}
-              {{ range .AllTranslations }}
-                <a class="small text-light" href="{{ .Permalink }}" class="nav-link">{{ .Language.LanguageName }}</a> |
-              {{ end }}
-              {{ end }}
-            </ul>
+            <div class="card-body">
+              <p><img src="/images/logo-bright.svg" alt="{{ .Site.Title }}" title="{{ .Site.Title }}"></p>
+              <ul class="list-unstyled"> |
+                {{ if .Site.IsMultiLingual }}
+                {{ range .AllTranslations }}
+                  <a class="small text-light" href="{{ .Permalink }}" class="nav-link">{{ .Language.LanguageName }}</a> |
+                {{ end }}
+                {{ end }}
+              </ul>
+            </div>
           </div>
         </div>
 
