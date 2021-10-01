@@ -52,3 +52,11 @@ main {
   --bs-bg-opacity: 1;
   background-color: rgba($teal,var(--bs-bg-opacity))!important;
 }
+
+.list-inline-item.separator + .list-inline-item.separator:before {
+  content: " | "
+}
+
+.list-inline-item.separator:not(:last-child) {
+  margin-right: 0;
+}
