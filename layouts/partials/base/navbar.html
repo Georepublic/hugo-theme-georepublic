@@ -56,7 +56,7 @@
 
             {{ with .Site.GetPage "contact" }}
             <li class="nav-item">
-              <a class="btn {{ .Site.Params.navbar.style.contact | default .Site.Data.default.navbar.style.contact }} rounded-pill ml-4" href="{{ .Permalink }}" role="button">{{ .Name }}</a>
+              <a class="btn text-light {{ .Site.Params.navbar.style.contact | default .Site.Data.default.navbar.style.contact }} ml-4" href="{{ .Permalink }}" role="button">{{ .Name }}</a>
             </li>
             {{ end }}
           </ul>
