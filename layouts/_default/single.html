@@ -5,11 +5,13 @@
 {{ define "main" }}
 <main role="main" class="flex-shrink-0 mb-0">
 
+  {{ if (isset .Params "banner") }}
   <div class="p-5 mb-4 text-white bg-theme-dark">
     <div class="container py-4 text-center">
       <h1 class="display-2 fw-bold">{{ .Title | default .Site.Title }}</h1>
     </div>
   </div>
+  {{ end }}
 
   <article class="container mt-5">
     {{ .Content }}
@@ -25,5 +27,15 @@
     {{ end }}
 
   </article>
+
+  {{ if (isset .Params "callout") }}
+  <div class="p-5 mt-5 bg-theme-light">
+    {{ with .Params.callout }}
+    {{ $name := . }}
+    {{ partial $name . }}
+    {{ end }}
+  </div>
+  {{ end }}
+
 </main>
 {{ end }}
