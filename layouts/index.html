@@ -13,8 +13,18 @@
   </div>
   {{ end }}
 
-  <div class="container mt-5">
+  <div class="container my-5">
     {{ .Content }}
   </div>
+
+  {{ if (isset .Params "callout") }}
+  <div class="p-5 mt-5 bg-theme-light">
+    {{ with .Params.callout }}
+    {{ $name := . }}
+    {{ partial $name . }}
+    {{ end }}
+  </div>
+  {{ end }}
+
 </main>
 {{ end }}

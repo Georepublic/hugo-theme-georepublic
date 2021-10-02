@@ -38,6 +38,11 @@ main {
   background-color: rgba($teal,var(--bs-bg-opacity))!important;
 }
 
+.bg-theme-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba($light,var(--bs-bg-opacity))!important;
+}
+
 .bg-theme-dark {
   --bs-bg-opacity: 1;
   background-color: rgba($gray-700,var(--bs-bg-opacity))!important;
