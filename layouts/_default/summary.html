@@ -1,4 +1,5 @@
-<div class="card shadow-sm">
+<div class="col">
+  <div class="card shadow-sm">
   {{ with .Resources.ByType "image" }}
     {{ range . }}
       {{ $image := .Fill "640x320" }}
@@ -6,16 +7,17 @@
       <img class="img-thumbnail" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
     {{ end }}
   {{ end }}
-  <div class="card-body">
-    {{ with .Params.categories }}
-      <strong class="d-inline-block mb-2 text-info">{{ index (.) 0 }}</strong>
-    {{ end }}
-    <h3 class="mb-0">{{ .Title }}</h3>
-    <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
-    <p class="card-text mb-auto">{{ .Summary }}</p>
-    <div class="d-flex justify-content-between align-items-center mt-3">
-      <a href="{{ .Permalink }}" class="stretched-link text-danger">Continue reading</a>
-      <small class="text-muted">{{ i18n "ReadingTime" .ReadingTime }}</small>
+    <div class="card-body">
+      {{ with .Params.categories }}
+        <strong class="d-inline-block mb-2 text-info">{{ . }}</strong>
+      {{ end }}
+      <h3 class="mb-0">{{ .Title }}</h3>
+      <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
+      <p class="card-text mb-auto">{{ .Summary }}</p>
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <a href="{{ .Permalink }}" class="stretched-link text-danger">Continue reading</a>
+        <small class="text-muted">{{ i18n "ReadingTime" .ReadingTime }}</small>
+      </div>
     </div>
   </div>
 </div>
