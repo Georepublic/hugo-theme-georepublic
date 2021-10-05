@@ -1,6 +1,19 @@
-<article class="post" style="margin-top: 2.5rem;">
-  <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
-  <small>{{ .Date | time.Format ":date_long" }} - {{ i18n "ReadingTime" .ReadingTime }}</small>
-  <p>{{ .Summary }}</p>
-  <a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
-</article>
+<div class="card shadow-sm">
+  {{ with .Resources.ByType "image" }}
+    {{ range . }}
+      {{ $image := .Fill "640x320" }}
+      <img src="">
+      <img class="img-thumbnail" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
+    {{ end }}
+  {{ end }}
+  <div class="card-body">
+    <strong class="d-inline-block mb-2 text-info">{{ index (.Params.categories) 0 }}</strong>
+    <h3 class="mb-0">{{ .Title }}</h3>
+    <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
+    <p class="card-text mb-auto">{{ .Summary }}</p>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <a href="{{ .Permalink }}" class="stretched-link text-danger">Continue reading</a>
+      <small class="text-muted">{{ i18n "ReadingTime" .ReadingTime }}</small>
+    </div>
+  </div>
+</div>
