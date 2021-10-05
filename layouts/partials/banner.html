@@ -8,8 +8,8 @@
   <div class="container py-4 text-left">
     <div class="row row-cols-1 g-4 justify-content-left">
       <div class="col-xl-8 offset-md-1 py-5">
-        <h1 class="bd-title mt-0 fw-bold">{{ .Params.banner.title }}</h1>
-        <p class="bd-lead py-3">{{ .Params.banner.abstract }}</p>
+        <h1 class="bd-title mt-0 fw-bold">{{ .Params.banner.title | default .Title }}</h1>
+        <p class="bd-lead py-3">{{ .Params.banner.abstract | default .Summary | safeHTML | truncate 200 }}</p>
       </div>
     </div>
   </div>
