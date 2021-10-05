@@ -7,7 +7,9 @@
     {{ end }}
   {{ end }}
   <div class="card-body">
-    <strong class="d-inline-block mb-2 text-info">{{ index (.Params.categories) 0 }}</strong>
+    {{ with .Params.categories }}
+      <strong class="d-inline-block mb-2 text-info">{{ index (.) 0 }}</strong>
+    {{ end }}
     <h3 class="mb-0">{{ .Title }}</h3>
     <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
     <p class="card-text mb-auto">{{ .Summary }}</p>
