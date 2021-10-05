@@ -1,0 +1,6 @@
+<article class="post">
+  <h2><a href='{{ .Permalink }}'> {{ .Title }}</a> </h2>
+  <small>{{ .Date | time.Format ":date_long" }} - {{ i18n "ReadingTime" .ReadingTime }}</small>
+  <p>{{ .Summary }}</p>
+  <a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
+</article>
