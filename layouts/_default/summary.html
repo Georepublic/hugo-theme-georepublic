@@ -21,7 +21,7 @@
       <p class="card-text mb-auto mt-3">{{ .Summary }}</p>
 
       <div class="d-flex justify-content-between align-items-center mt-3">
-        <a href="{{ .Permalink }}" class="stretched-link text-danger">Continue reading</a>
+        <a href="{{ .Permalink }}" class="stretched-link text-danger">{{ i18n "readMore" }}</a>
         <small class="text-muted">{{ i18n "ReadingTime" .ReadingTime }}</small>
       </div>
     </div>
