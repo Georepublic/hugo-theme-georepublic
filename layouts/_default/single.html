@@ -5,6 +5,7 @@
 {{ define "main" }}
 <main role="main" class="flex-shrink-0 mb-0">
 
+  {{ if (isset .Params "cover") }}
   <div class="p-5 mb-4 text-white bg-theme-dark banner-section" style="background-image: url('{{ .Params.cover }}')">
     <div class="container py-3 text-left">
       <div class="row row-cols-1 g-4 justify-content-left">
@@ -17,6 +18,7 @@
       </div>
     </div>
   </div>
+  {{ end }}
 
   <article class="container mt-4">
 
