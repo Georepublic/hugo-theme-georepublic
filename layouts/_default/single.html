@@ -5,20 +5,44 @@
 {{ define "main" }}
 <main role="main" class="flex-shrink-0 mb-0">
 
-  {{ if (isset .Params "cover") }}
-    {{ partial "banner" . }}
-  {{ end }}
+  <div class="p-5 mb-4 text-white bg-theme-dark banner-section" style="background-image: url('{{ .Params.cover }}')">
+    <div class="container py-3 text-left">
+      <div class="row row-cols-1 g-4 justify-content-left">
+        <div class="col-xl-8 offset-md-1 py-3">
+          <h1 class="bd-title mt-0 fw-bold">{{ .Title }}</h1>
+          {{ with .Params.abstract }}
+          <p class="bd-lead py-3">{{ . }}</p>
+          {{ end}}
+        </div>
+      </div>
+    </div>
+  </div>
 
   <article class="container mt-4">
-    {{ .Content }}
+
+    <div class="container py-4 text-start">
+      <div class="container">
+        <div class="row row-cols-1 g-4 justify-content-center">
+          <div class="col col-lg-10">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
 
     {{ with .Params.tags }}
-    <div>
-      <ul id="tags">
-        {{ range . }}
-        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-        {{ end }}
-      </ul>
+    <div class="container py-4 text-start">
+      <div class="container">
+        <div class="row row-cols-1 g-4 justify-content-center">
+          <div class="col col-lg-10">
+            <ul id="tags">
+              {{ range . }}
+              <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     {{ end }}
 
