@@ -3,28 +3,52 @@
 {{ end }}
 
 {{ define "main" }}
+
+{{ $columns := ( .Params.columns | default .Site.Params.main.columns ) | default .Site.Data.default.main.columns }}
+
 <main role="main" class="flex-shrink-0 mb-0">
 
-  {{ if (isset .Params "banner") }}
-    {{ partial "banner" . }}
+  {{ if (isset .Params "cover") }}
+  <div class="p-5 mb-4 text-white bg-theme-dark banner-section" style="background-image: url('{{ .Params.cover }}')">
+    <div class="container py-3 text-left">
+      <div class="row row-cols-1 g-4 justify-content-left">
+        <div class="col-xl-8 offset-md-1 py-3">
+          <h1 class="bd-title mt-0 fw-bold">{{ .Title }}</h1>
+          {{ with .Params.abstract }}
+          <p class="bd-lead py-3">{{ . }}</p>
+          {{ end}}
+        </div>
+      </div>
+    </div>
+  </div>
   {{ end }}
 
   <div class="container mt-4">
-    {{ if or .Title .Content }}
-      {{ with .Content }}
-        {{ . }}
-      {{ end }}
-    {{ end }}
 
-    <div class="container pt-md-1 pb-md-4 mb-5">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      {{ range .Paginator.Pages }}
-        {{ .Render "summary" }}
-      {{ end }}
+    <div class="container py-4 text-start">
+      <div class="container">
+        <div class="row row-cols-1 g-4 justify-content-center">
+          <div class="col col-lg-{{ $columns }}">
+            {{ if or .Title .Content }}
+              {{ with .Content }}
+                {{ . }}
+              {{ end }}
+            {{ end }}
+
+            <div class="container pt-md-1 pb-md-4 mb-5">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              {{ range .Paginator.Pages }}
+                {{ .Render "summary" }}
+              {{ end }}
+              </div>
+            </div>
+
+            {{ template "_internal/pagination.html" . }}
+          </div>
+        </div>
       </div>
     </div>
 
-    {{ template "_internal/pagination.html" . }}
   </div>
 
   {{ if (isset .Params "callout") }}

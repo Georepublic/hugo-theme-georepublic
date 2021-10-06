@@ -3,6 +3,9 @@
 {{ end }}
 
 {{ define "main" }}
+
+{{ $columns := ( .Params.columns | default .Site.Params.main.columns ) | default .Site.Data.default.main.columns }}
+
 <main role="main" class="flex-shrink-0 mb-0">
 
   {{ if (isset .Params "cover") }}
@@ -25,7 +28,7 @@
     <div class="container py-4 text-start">
       <div class="container">
         <div class="row row-cols-1 g-4 justify-content-center">
-          <div class="col col-lg-10">
+          <div class="col col-lg-{{ $columns }}">
             {{ .Content }}
           </div>
         </div>
@@ -36,7 +39,7 @@
     <div class="container py-4 text-start">
       <div class="container">
         <div class="row row-cols-1 g-4 justify-content-center">
-          <div class="col col-lg-10">
+          <div class="col col-lg-{{ $columns }}">
             <ul id="tags">
               {{ range . }}
               <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>

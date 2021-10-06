@@ -5,6 +5,9 @@
 # {{ .Site.Params.color | default .Site.Data.default.color }}
 #
 
+main:
+  columns: 11
+
 navbar:
   style:
     contact: "btn-outline-success"
