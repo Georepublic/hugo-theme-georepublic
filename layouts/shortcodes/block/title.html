@@ -1,0 +1,12 @@
+<div class="container py-5 text-center">
+  <div class="container pb-4">
+    <div class="row row-cols-1 g-4 justify-content-center">
+      <div class="col col-lg-10">
+        {{ with .Get "title" }}
+        <h1 class="display-2 py-3">{{ . }}</h1>
+        {{ end }}
+        {{ .Inner | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>

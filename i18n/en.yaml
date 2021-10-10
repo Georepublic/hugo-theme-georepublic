@@ -26,6 +26,31 @@ ReadingTime:
   one: "One minute to read"
   other: '{{.Count}} minutes to read'
 
+form:
+  button:
+    submit:
+      other: "Submit"
+    signup:
+      other: "Signup"
+    send:
+      other: "Send"
+  fields:
+    name:
+      label:
+        other: "Your name"
+      placeholder:
+        other: "Your name"
+    email:
+      label:
+        other: "Your e-mail address"
+      placeholder:
+        other: "name@example.com"
+    message:
+      label:
+        other: "Your message"
+      placeholder:
+        other: "Leave a message here"
+
 footer:
   summary:
     other: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."

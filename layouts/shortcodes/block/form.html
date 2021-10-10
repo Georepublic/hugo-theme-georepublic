@@ -1,0 +1,17 @@
+{{ $language :=  .Site.Language }}
+<form action="{{ $.Site.Data.forms.sendy.subscribe }}" method="POST" accept-charset="utf-8" class="needs-validation" novalidate="">
+  <div class="row g-3">
+    <div class="form-floating d-none">
+      <input type="text" class="form-control bg-theme-light" name="hp" id="hp">
+      <label for="hp">HP</label>
+    </div>
+    {{ .Inner }}
+  </div>
+
+  {{ with .Get "list" }}
+    {{ $data := index $.Site.Data.forms . }}
+    <input type="hidden" name="list" value="{{ index $data.list (string $language) }}" >
+    <input type="hidden" name="subform" value="yes" >
+    <button class="w-100 btn btn-danger text-light btn-lg mt-3" type="submit">{{ i18n "form.button.submit" }}</button>
+  {{ end }}
+</form>
