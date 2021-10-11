@@ -1,11 +1,14 @@
 // Custom Javascript for theme
 
-// JavaScript for disabling form submissions if there are invalid fields
 (function () {
   'use strict'
 
+  /*
+   * JavaScript for disabling form submissions if there are invalid fields
+   */
+
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
+  const forms = document.querySelectorAll('.needs-validation')
 
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms)
@@ -21,4 +24,15 @@
 
       }, false)
     })
+
+  /*
+   * JavaScript for reading form submission information from URL parameters
+   */
+  const urlParams = new URLSearchParams(window.location.search);
+
+  if (urlParams.has('email')) {
+    const tag = document.getElementById("your-email");
+    tag.textContent = urlParams.get('email');
+  }
+
 })()
