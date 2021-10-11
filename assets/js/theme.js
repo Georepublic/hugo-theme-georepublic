@@ -30,9 +30,13 @@
    */
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (urlParams.has('email')) {
+  if ( urlParams.has('email') && document.getElementById("your-email") ) {
     const tag = document.getElementById("your-email");
     tag.textContent = urlParams.get('email');
+  }
+
+  if (urlParams.has('email') && document.getElementById("email") ) {
+    document.getElementById("email").value = urlParams.get('email');
   }
 
 })()
