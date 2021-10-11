@@ -38,18 +38,12 @@ form:
     name:
       label:
         other: "Ihr Name"
-      placeholder:
-        other: "Ihr Name"
     email:
       label:
         other: "Ihre Emailaddress"
-      placeholder:
-        other: "name@example.de"
     message:
       label:
         other: "Ihre Nachricht"
-      placeholder:
-        other: "Verfassen Sie hier Ihre Nachricht."
     gdpr:
       label:
         other: "<strong>Marketing permission</strong>: I give my consent to  to be in touch with me via email using the information I have provided in this form for the purpose of news, updates and marketing."

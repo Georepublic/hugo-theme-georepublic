@@ -34,17 +34,11 @@ form:
     name:
       label:
         other: "お名前"
-      placeholder:
-        other: "お名前"
     email:
       label:
         other: "E-mailアドレス"
-      placeholder:
-        other: "name@example.jp"
     message:
       label:
-        other: "お問い合わせ内容"
-      placeholder:
         other: "お問い合わせ内容"
     gdpr:
       label:
