@@ -5,6 +5,9 @@
 # {{ .Site.Params.color | default .Site.Data.default.color }}
 #
 
+email:
+  support: "mail@example.com"
+
 main:
   columns: 11
 

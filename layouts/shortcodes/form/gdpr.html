@@ -1,5 +1,7 @@
+{{ $email := ( .Site.Params.email.support | default .Site.Data.default.email.support) }}
+
 <div class="form-check mx-2">
   <input type="checkbox" class="form-check-input" name="gdpr" id="gdpr" required>
   <label class="form-check-label" for="gdpr">{{ i18n `form.fields.gdpr.label` | safeHTML }}</label>
-  <p class="mt-2">{{ i18n `form.fields.gdpr.notice` | safeHTML }}</p>
+  <p class="mt-2">{{ i18n `form.fields.gdpr.notice` $email | safeHTML }}</p>
 </div>
