@@ -1,4 +1,6 @@
 {{ $language :=  .Site.Language }}
+
+{{ if isset $.Site.Data.forms "sendy" }}
 <form action="{{ $.Site.Data.forms.sendy.unsubscribe }}" method="POST" accept-charset="utf-8" class="needs-validation" novalidate="">
   <div class="row g-3">
     {{ .Inner }}
@@ -10,3 +12,9 @@
     <button class="w-100 btn btn-danger text-light btn-lg mt-3" type="submit">{{ i18n "form.button.submit" }}</button>
   {{ end }}
 </form>
+{{ else }}
+  <div class="alert alert-warning" role="alert">
+    <strong>Alert:</strong> Sendy is not properly configured in <code>data/forms.yaml</code>.
+  </div>
+{{ end }}
+
