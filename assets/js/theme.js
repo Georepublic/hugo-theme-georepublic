@@ -39,4 +39,21 @@
     document.getElementById("email").value = urlParams.get('email')
   }
 
+
+  /*
+   * JavaScript to pass parameter(s) to the next form page
+   */
+  const form = document.getElementById('next-step')
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    const params = new URLSearchParams({
+      email: form.querySelector('input[type="email"]').value
+    })
+
+    window.location.replace(form.action + "?" + params.toString())
+    return false;
+  })
+
 })()
