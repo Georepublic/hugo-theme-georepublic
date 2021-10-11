@@ -1,0 +1,12 @@
+{{ $language :=  .Site.Language }}
+<form action="{{ $.Site.Data.forms.sendy.unsubscribe }}" method="POST" accept-charset="utf-8" class="needs-validation" novalidate="">
+  <div class="row g-3">
+    {{ .Inner }}
+  </div>
+
+  {{ with .Get "list" }}
+    {{ $data := index $.Site.Data.forms . }}
+    <input type="hidden" name="list" value="{{ index $data.list (string $language) }}" >
+    <button class="w-100 btn btn-danger text-light btn-lg mt-3" type="submit">{{ i18n "form.button.submit" }}</button>
+  {{ end }}
+</form>
