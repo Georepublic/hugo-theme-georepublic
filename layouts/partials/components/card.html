@@ -15,10 +15,10 @@
       <strong class="d-inline-block mb-2 text-info">{{ . }}</strong>
       {{ end }}
 
-      <h3 class="mb-0">{{ .Title }}</h3>
+      <h3 class="mb-1">{{ .Title }}</h3>
 
       {{ if not .Date.IsZero }}
-      <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
+      <div class="mb-2 text-muted">{{ .Date | time.Format ":date_long" }}</div>
       {{ end }}
 
       <a href="{{ .Permalink }}" class="stretched-link"></a>
