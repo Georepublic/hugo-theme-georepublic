@@ -38,7 +38,7 @@
             <div class="container pt-md-1 pb-md-4 mb-5">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
               {{ range .Paginator.Pages }}
-                {{ .Render "summary" }}
+                {{ partial "components/card" . }}
               {{ end }}
               </div>
             </div>

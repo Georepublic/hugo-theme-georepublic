@@ -1,9 +1,9 @@
-<div class="col">
-  <div class="card shadow-sm">
+<div class="col text-start">
+  <div class="card shadow-sm h-100">
     {{ with .Resources.ByType "image" }}
       {{ range . }}
         {{ $image := .Fill "640x320" }}
-        <img class="img-thumbnail" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
+        <img class="card-img-top" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
       {{ end }}
     {{ end }}
 
@@ -19,11 +19,13 @@
       {{ end }}
 
       <p class="card-text mb-auto mt-3">{{ .Summary }}</p>
+    </div>
 
-      <div class="d-flex justify-content-between align-items-center mt-3">
+    <div class="card-footer">
+      <div class="d-flex justify-content-between align-items-center">
         <a href="{{ .Permalink }}" class="stretched-link text-danger">{{ i18n "readMore" }}</a>
         <small class="text-muted">{{ i18n "ReadingTime" .ReadingTime }}</small>
       </div>
     </div>
-  </div>
+</div>
 </div>

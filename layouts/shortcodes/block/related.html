@@ -1,0 +1,14 @@
+{{ $pages := .Site.RegularPages.Reverse }}
+{{ $limit := (.Get "limit") | default "3" }}
+
+{{ with (.Get "section") }}
+  {{ $pages = where $pages "Section" . }}
+{{ end }}
+
+<div class="container pt-md-1 pb-md-4 mb-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  {{ range first $limit $pages }}
+    {{ partial "components/card" . }}
+  {{ end }}
+  </div>
+</div>
