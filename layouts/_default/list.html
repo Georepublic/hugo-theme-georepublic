@@ -23,28 +23,29 @@
   </div>
   {{ end }}
 
-  <div class="container mt-4">
+  <div class="container py-4">
+    {{ if or .Title .Content }}
+      {{ with .Content }}
+        {{ . }}
+      {{ end }}
+    {{ end }}
 
-    <div class="container py-4 text-start">
-      <div class="container">
-        <div class="row row-cols-1 g-4 justify-content-center">
-          <div class="col col-lg-{{ $columns }}">
-            {{ if or .Title .Content }}
-              {{ with .Content }}
-                {{ . }}
-              {{ end }}
+    <div class="container">
+      <div class="row row-cols-1 g-4 justify-content-center">
+        <div class="col col-lg-10">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {{ range .Paginator.Pages }}
+              {{ partial "components/card-footer" . }}
             {{ end }}
-
-            <div class="container pt-md-1 pb-md-4 mb-5">
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-              {{ range .Paginator.Pages }}
-                {{ partial "components/card-footer" . }}
-              {{ end }}
-              </div>
-            </div>
-
-            {{ template "_internal/pagination.html" . }}
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row row-cols-1 g-4 justify-content-center">
+        <div class="col col-lg-10">
+          {{ template "_internal/pagination.html" . }}
         </div>
       </div>
     </div>
