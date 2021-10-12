@@ -1,34 +1,13 @@
-<div class="col text-start">
-  <div class="card shadow-sm h-100">
-    {{ with .Resources.ByType "image" }}
-      {{ range . }}
-        {{ $image := . }}
-        {{ if ne .MediaType.SubType "svg" }}
-          {{ $image = .Fill "640x320" }}
-        {{ end }}
-        <img class="card-img-top" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
-      {{ end }}
-    {{ end }}
-
+<div class="col-md-8 offset-md-2 text-start">
+  <div class="card shadow-sm border-0 h-100">
     <div class="card-body">
-      {{ with .Params.categories }}
-      <strong class="d-inline-block mb-2 text-info">{{ . }}</strong>
+      {{ if not .Date.IsZero }}
+      <div class="text-muted">{{ .Date | time.Format ":date_long" }}</div>
       {{ end }}
 
       <h3 class="mb-0">{{ .Title }}</h3>
-
-      {{ if not .Date.IsZero }}
-      <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
-      {{ end }}
-
       <p class="card-text mb-auto mt-3">{{ .Summary }}</p>
+      <a href="{{ .Permalink }}" class="stretched-link"></a>
     </div>
-
-    <div class="card-footer">
-      <div class="d-flex justify-content-between align-items-center">
-        <a href="{{ .Permalink }}" class="stretched-link text-danger">{{ i18n "readMore" }}</a>
-        <small class="text-muted">{{ i18n "ReadingTime" .ReadingTime }}</small>
-      </div>
-    </div>
-</div>
+  </div>
 </div>
