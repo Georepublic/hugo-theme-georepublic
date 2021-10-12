@@ -1,0 +1,14 @@
+<div class="col text-center align-self-center d-flex h-100">
+  {{ $title := .Title }}
+  {{ with .Resources.ByType "image" }}
+    {{ range . }}
+      {{ $image := . }}
+      {{ if ne .MediaType.SubType "svg" }}
+        {{ $image = .Fill "640x320" }}
+      {{ end }}
+      <a href="{{ .Permalink }}" class="p-3">
+        <img class="img-fluid" src="{{ $image.RelPermalink }}" alt="{{ $title }}" title="{{ $title }}">
+      </a>
+    {{ end }}
+  {{ end }}
+</div>

@@ -1,5 +1,6 @@
 {{ $pages := .Site.RegularPages.Reverse }}
 {{ $limit := (.Get "limit") | default "3" }}
+{{ $style := (.Get "style") | default "card" }}
 
 {{ with (.Get "section") }}
   {{ $pages = where $pages "Section" . }}
@@ -8,7 +9,7 @@
 <div class="container pt-md-1 pb-md-4 mb-5">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
   {{ range first $limit $pages }}
-    {{ partial "components/card" . }}
+    {{ partial (path.Join "components" $style) . }}
   {{ end }}
   </div>
 </div>
