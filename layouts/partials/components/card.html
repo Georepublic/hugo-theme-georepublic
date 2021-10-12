@@ -1,4 +1,4 @@
-<div class="col text-start">
+<div class="col text-start mb-4">
   <div class="card shadow-sm border-0 h-100">
     {{ with .Resources.ByType "image" }}
       {{ range . }}
@@ -21,7 +21,7 @@
       <div class="mb-3 text-muted">{{ .Date | time.Format ":date_long" }}</div>
       {{ end }}
 
-      <p class="card-text mb-auto mt-3">{{ .Summary }}</p>
+      <p class="card-text mt-3">{{ .Summary }}</p>
     </div>
 
     <div class="card-footer border-0 bg-transparent">
