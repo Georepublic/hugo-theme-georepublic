@@ -31,6 +31,12 @@
           <div class="col col-lg-{{ $columns }}">
             {{ .Content }}
           </div>
+          {{ if (isset .Params "gitinfo") }}
+          <div class="col col-lg-{{ $columns }} text-end text-muted small">
+            {{ .GitInfo.AuthorDate }}<br>
+            {{ .GitInfo.Hash }}
+          </div>
+          {{ end }}
         </div>
       </div>
     </div>
