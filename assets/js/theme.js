@@ -4,6 +4,21 @@
   'use strict'
 
   /*
+   * Apply Bootstrap styles to elements to look properly in Markdown
+   */
+  const tables = document.querySelectorAll('table')
+  Array.prototype.slice.call(tables)
+    .forEach(function (table) {
+      table.className = 'table table-hover'
+    })
+
+  const blockquotes = document.querySelectorAll('blockquote')
+  Array.prototype.slice.call(blockquotes)
+    .forEach(function (blockquote) {
+      blockquote.className = 'border-start border-5 bg-light bg-gradient p-2'
+    })
+
+  /*
    * JavaScript for disabling form submissions if there are invalid fields
    */
 
@@ -45,15 +60,17 @@
    */
   const form = document.getElementById('next-step')
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault()
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault()
 
-    const params = new URLSearchParams({
-      email: form.querySelector('input[type="email"]').value
+      const params = new URLSearchParams({
+        email: form.querySelector('input[type="email"]').value
+      })
+
+      window.location.replace(form.action + "?" + params.toString())
+      return false;
     })
-
-    window.location.replace(form.action + "?" + params.toString())
-    return false;
-  })
+  }
 
 })()
