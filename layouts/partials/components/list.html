@@ -1,8 +1,8 @@
 <div class="col-md-8 offset-md-2 text-start">
   <div class="card shadow-sm border-0 h-100">
     <div class="card-body">
-      {{ if not .Date.IsZero }}
-      <div class="text-muted">{{ .Date | time.Format ":date_long" }}</div>
+      {{ if (isset .Params "date") }}
+      <div class="text-muted">{{ .Params.date | time.Format ":date_long" }}</div>
       {{ end }}
 
       <h3 class="mb-0">{{ .Title }}</h3>

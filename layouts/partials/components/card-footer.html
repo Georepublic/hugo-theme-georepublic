@@ -17,8 +17,8 @@
 
       <h3 class="mb-1">{{ .Title }}</h3>
 
-      {{ if not .Date.IsZero }}
-      <div class="mb-2 text-muted">{{ .Date | time.Format ":date_long" }}</div>
+      {{ if (isset .Params "date") }}
+      <div class="mb-2 text-muted">{{ .Params.date | time.Format ":date_long" }}</div>
       {{ end }}
 
       <p class="card-text mt-3">{{ .Params.abstract | default .Summary }}</p>
