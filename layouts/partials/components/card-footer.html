@@ -21,7 +21,7 @@
       <div class="mb-2 text-muted">{{ .Date | time.Format ":date_long" }}</div>
       {{ end }}
 
-      <p class="card-text mt-3">{{ .Summary }}</p>
+      <p class="card-text mt-3">{{ .Params.abstract | default .Summary }}</p>
     </div>
 
     <div class="card-footer border-0 bg-transparent">
