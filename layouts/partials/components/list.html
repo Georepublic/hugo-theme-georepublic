@@ -7,7 +7,7 @@
 
       <h3 class="mb-0">{{ .Title }}</h3>
       <a href="{{ .Permalink }}" class="stretched-link"></a>
-      <p class="card-text mb-auto mt-3">{{ .Summary }}</p>
+      <p class="card-text mb-auto mt-3">{{ .Params.abstract | default .Summary }}</p>
     </div>
   </div>
 </div>
