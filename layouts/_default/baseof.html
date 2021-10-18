@@ -31,7 +31,7 @@
     {{ end -}}
   </head>
 
-  <body class="d-flex flex-column">
+  <body class="d-flex flex-column {{ .Lang }}">
     <!-- Code that all your templates share, like a header -->
     {{ block "header" . }}
       <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->

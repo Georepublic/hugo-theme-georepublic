@@ -5,6 +5,19 @@ main {
   min-height: 350px;
 }
 
+body.ja {
+  font-family: 'ryo-text-plusn', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN W3', 'MS PMincho', serif;
+  text-align: justify;
+  word-wrap: break-word;
+  word-break: break-all;
+  letter-spacing: 0.01em;
+  line-height: var(3.5);
+}
+
+body.ja > h1, h2, h3, h4, h5, h6 {
+  font-family: 'ryo-display-plusn', 'YuMincho', 'Yu Mincho', '游明朝', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN W3', 'MS PMincho', serif;
+}
+
 .feather {
   width: 16px;
   height: 16px;
