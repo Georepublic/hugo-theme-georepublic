@@ -14,7 +14,7 @@
     {{ $data := index $.Site.Data.forms . }}
     <input type="hidden" name="list" value="{{ index $data.list (string $language) }}" >
     <input type="hidden" name="subform" value="yes" >
-    <button class="w-100 btn btn-danger text-light btn-lg mt-3" type="submit">{{ i18n "form.button.submit" }}</button>
+    <button class="w-100 btn {{ $.Site.Params.navbar.style.contact | default $.Site.Data.default.navbar.style.contact }} text-light btn-lg mt-3" type="submit">{{ i18n "form.button.submit" }}</button>
   {{ end }}
 </form>
 {{ else }}
