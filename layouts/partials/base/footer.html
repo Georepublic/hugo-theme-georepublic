@@ -43,7 +43,7 @@
                 {{ if .HasChildren }}
                 <ul class="list-unstyled">
                   {{ range .Children }}
-                  <li class="mute"><a class="text-light" href="{{ .URL }}">{{ .Name }}</a></li>
+                    <li class="mute"><a class="text-light" href="{{ .URL }}">{{ .Name }}</a></li>
                   {{ end }}
                 </ul>
                 {{ else }}
@@ -72,7 +72,13 @@
           <ul class="list-unstyled my-0 my-md-3">
             {{ range $.Site.Data.social }}
             {{ if not .draft }}
-            <li class="list-inline-item small text-light"> <a class="text-light" href="{{ .href }}">
+
+            {{ $href := .href }}
+            {{ if eq (printf "%T" .href) "map[string]interface {}" }}
+              {{ $href = index .href $.Site.Language.Lang }}
+            {{ end }}
+
+            <li class="list-inline-item small text-light"> <a class="text-light" href="{{ $href }}">
               <svg class="feather ">
                 <use xlink:href="/elements/feather-sprite.svg#{{ .icon }}"/>
               </svg>
