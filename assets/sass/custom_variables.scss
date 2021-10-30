@@ -1,7 +1,4 @@
 // Custom Bootstrap syles
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
-
 $white:    #fff;
 $gray-100: #f3f3f3;
 $gray-200: #e9ecef;
@@ -39,10 +36,6 @@ $light:         $gray-100;
 $dark:          $gray-800;
 
 $text-muted:    $grp_muted;
-
-// typography
-$font-family-serif: "Noto Sans", "Segoe UI", "Roboto", "Noto Color Emoji";
-$font-family-base: $font-family-serif;
 
 $display-font-sizes: (
   1: 3rem,
