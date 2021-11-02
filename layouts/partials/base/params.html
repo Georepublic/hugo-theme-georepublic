@@ -1,0 +1,3 @@
+<input type="hidden" value="{{ $.Site.Data.forms.chatbot.url }}" id="chatbotUrl" />
+<input type="hidden" value="{{ $.Site.Language.Lang | default `en` }}" id="chatbotLocale" />
+<input type="hidden" value="{{ index $.Site.Data.forms.chatbot.inbox $.Site.Language.Lang | default `unset` }}" id="chatbotToken" />
