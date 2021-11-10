@@ -1,15 +1,31 @@
-{{ $pages := .Site.RegularPages.Reverse }}
 {{ $limit := (.Get "limit") | default "3" }}
 {{ $style := (.Get "style") | default "card" }}
+{{ $title := (.Get "title") | default "" }}
 
-{{ with (.Get "section") }}
-  {{ $pages = where $pages "Section" . }}
+{{ $permalink := .Page.Permalink }}
+
+{{ $pages := .Site.RegularPages.Related .Page | first $limit }}
+
+{{ with (.Get "section") }}.
+  {{ $pages = $.Site.RegularPages.Reverse }}
+  {{ $pages = (where (where $pages "Section" . ) "Permalink" "!=" $permalink)  | first $limit }}
 {{ end }}
 
-<div class="container pt-md-1 pb-md-4 mb-5">
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-  {{ range first $limit $pages }}
-    {{ partial (path.Join "components" $style) . }}
-  {{ end }}
+{{ if (gt ($pages | len) 0) }}
+<div class="container text-center">
+  <div class="row row-cols-1 justify-content-center">
+    <div class="col col-lg-10">
+      <h2 class="display-3 my-4">{{ $title }}</h2>
+
+      <div class="container pt-md-1 pb-md-4 mb-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {{ range $pages }}
+          {{ partial (path.Join "components" $style) . }}
+        {{ end }}
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
+{{ end }}

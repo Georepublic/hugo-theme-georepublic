@@ -17,12 +17,15 @@
 
       <h3 class="mb-1">{{ .Title }}</h3>
 
-      {{ if (isset .Params "date") }}
-      <div class="mb-2 text-muted">{{ .Params.date | time.Format ":date_long" }}</div>
+      {{ with .Params.date }}
+      <div class="mb-2 text-muted">{{ . | time.Format ":date_long" }}</div>
       {{ end }}
 
       <a href="{{ .Permalink }}" class="stretched-link"></a>
-      <p class="card-text mt-3">{{ .Params.abstract | default .Summary }}</p>
+
+      {{ with .Params.abstract }}
+      <p class="card-text mt-3">{{ . }}</p>
+      {{ end }}
     </div>
   </div>
 </div>

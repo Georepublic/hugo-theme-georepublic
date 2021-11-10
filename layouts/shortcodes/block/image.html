@@ -1,0 +1,12 @@
+{{ $image := (.Get "image") | default "/design/placeholder.svg" }}
+{{ $title := (.Get "title") | default "" }}
+
+<div class="container py-4 text-center">
+  <div class="container">
+    <div class="row row-cols-1 g-4 justify-content-center">
+      <div class="col">
+        <img class="img-fluid" src="{{ $image }}" alt="{{ $title }}" title="{{ $title }}">
+      </div>
+    </div>
+  </div>
+</div>

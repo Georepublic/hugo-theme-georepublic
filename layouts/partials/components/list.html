@@ -1,13 +1,17 @@
 <div class="col-md-8 offset-md-2 text-start">
   <div class="card shadow-sm border-0 h-100">
     <div class="card-body">
-      {{ if (isset .Params "date") }}
-      <div class="text-muted">{{ .Params.date | time.Format ":date_long" }}</div>
+      {{ with .Params.date }}
+      <div class="text-muted">{{ . | time.Format ":date_long" }}</div>
       {{ end }}
 
       <h3 class="mb-0">{{ .Title }}</h3>
+
       <a href="{{ .Permalink }}" class="stretched-link"></a>
-      <p class="card-text mb-auto mt-3">{{ .Params.abstract | default .Summary }}</p>
+
+      {{ with .Params.abstract }}
+      <p class="card-text mb-auto mt-3">{{ . }}</p>
+      {{ end }}
     </div>
   </div>
 </div>
