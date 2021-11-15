@@ -1,11 +1,17 @@
-{{ $image := (.Get "image") | default "/design/placeholder.svg" }}
 {{ $title := (.Get "title") | default "" }}
+{{ $size := (.Get "size") | default "480x" }}
+
+{{ $img := $.Page.Resources.GetMatch (.Get "image") }}
+
+{{ if ne $img.MediaType.SubType "svg" }}
+  {{ $img = $img.Resize $size }}
+{{ end }}
 
 <div class="container py-4 text-center">
   <div class="container">
     <div class="row row-cols-1 g-4 justify-content-center">
       <div class="col">
-        <img class="img-fluid" src="{{ $image }}" alt="{{ $title }}" title="{{ $title }}">
+        <img class="img-fluid" src="{{ $img.RelPermalink }}" alt="{{ $title }}" title="{{ $title }}">
       </div>
     </div>
   </div>
