@@ -42,9 +42,9 @@ form:
         other: "お問い合わせ内容"
     gdpr:
       label:
-        other: "<strong>Marketing permission</strong>: I give my consent to  to be in touch with me via email using the information I have provided in this form for the purpose of news, updates and marketing."
+        other: "<strong>マーケティング活動の許可</strong>：本フォームに記入した情報をもとに当社からのニュース、アップデート、マーケティングを目的とした電子メールを受け取ることに同意します。"
       notice:
-        other: "<strong>What to expect</strong>: If you wish to withdraw your consent and stop hearing from us, simply click the unsubscribe link at the bottom of every email we send or contact us at <a href='mailto:{{ . }}'>{{ . }}</a>. We value and respect your personal data and privacy. To view our privacy policy, please visit our website. By submitting this form, you agree that we may process your information in accordance with these terms."
+        other: "<strong>その他</strong>：お客様が同意を撤回し、当社からの連絡を停止したい場合は、当社が送信するすべての電子メールの下部にある購読停止リンクをクリックするか、<a href='mailto:{{ . }}'>{{ . }}</a>までご連絡ください。当社は、お客様の個人情報およびプライバシーを尊重します。当社のプライバシーポリシーをご覧になりたい方は、当社のウェブサイトをご覧ください。このフォームを送信することにより、お客様は、当社がこれらの条件に従ってお客様の情報を処理することに同意するものとします。"
 
 footer:
   summary:
