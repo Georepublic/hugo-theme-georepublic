@@ -9,7 +9,7 @@ Tested with Hugo `v0.83.0` or higher.
 Add as Git submodule to a Hugo project directory:
 
 ```
-git submodule add git://github.com/Georepublic/hugo-theme-georepublic path/to/theme
+git submodule add git@github.com:Georepublic/hugo-theme-georepublic.git path/to/theme
 ```
 
 Update and initialize available submodules with:
