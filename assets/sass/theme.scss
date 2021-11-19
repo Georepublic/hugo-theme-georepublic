@@ -1,0 +1,106 @@
+/* Theme specific CSS
+-------------------------------------------------- */
+
+body {
+  --bs-font-sans-serif: 'Noto Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+body:lang(ja-jp) {
+  --bs-body-font-size: 1.1rem;
+  --bs-body-line-height: 1.7;
+  --bs-font-sans-serif: 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', '游ゴシック', '游ゴシック体', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ ゴシック', 'MS Gothic', HiraKakuProN-W3, 'TakaoExゴシック', TakaoExGothic, 'MotoyaLCedar', 'Droid Sans Japanese', sans-serif;
+}
+
+main {
+  min-height: 350px;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  margin-top: 1.2em;
+}
+
+pre {
+  padding: 1rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.feather-large {
+  width: 64px;
+  height: 64px;
+}
+
+.feather-center, .svg-center {
+  display: inline-flex;
+  align-self: center;
+}
+
+.navbar-brand img {
+  height: 60px;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 2.5rem;
+}
+
+.navbar-expand-lg .navbar-i18n .nav-link {
+  padding-right: .5rem;
+}
+
+.bg-theme-color {
+  --bs-bg-opacity: 1;
+  background-color: rgba($teal,var(--bs-bg-opacity))!important;
+}
+
+.bg-theme-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba($light,var(--bs-bg-opacity))!important;
+}
+
+.bg-theme-dark {
+  --bs-bg-opacity: 1;
+  background-color: rgba($gray-700,var(--bs-bg-opacity))!important;
+}
+
+.bg-footer-top {
+  --bs-bg-opacity: 1;
+  background-color: rgba($gray-700,var(--bs-bg-opacity))!important;
+}
+
+.bg-footer-bottom {
+  --bs-bg-opacity: 1;
+  background-color: rgba($teal,var(--bs-bg-opacity))!important;
+}
+
+.list-inline-item.separator + .list-inline-item.separator:before {
+  content: " | "
+}
+
+.list-inline-item.separator:not(:last-child) {
+  margin-right: 0;
+}
+
+.card.card-animated {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer !important;;
+}
+
+.card.card-animated:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(97, 96, 96, 0.1), 0 4px 8px rgba(0,0,0,.06) !important;;
+}
