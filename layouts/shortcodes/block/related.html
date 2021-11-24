@@ -17,7 +17,7 @@
     <div class="col col-lg-10">
       <h2 class="display-3 my-4">{{ $title }}</h2>
 
-      <div class="container pt-md-1 pb-md-4 mb-5">
+      <div class="container pt-md-1 pb-md-4 mb-2">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-{{ $limit }} g-3">
         {{ range $pages }}
           {{ partial (path.Join "components" $style) . }}
