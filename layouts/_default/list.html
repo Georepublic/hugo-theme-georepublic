@@ -24,13 +24,13 @@
   {{ end }}
 
   {{ if .Params.title }}
-  <div class="container py-5 text-center">
-    <div class="container pb-4">
+  <div class="container py-4 text-center">
+    <div class="container">
       <div class="row row-cols-1 g-4 justify-content-center">
-        <div class="col col-lg-10">
-          <h1 class="display-2">{{ .Params.title }}</h1>
+        <div class="col col-lg-{{ sub $columns 1 }}">
+          <h1 class="display-2 pb-2">{{ .Params.title }}</h1>
           {{ with .Params.abstract }}
-            {{ . | markdownify }}
+          <p class="lead">{{ . | markdownify }}</p>
           {{ end }}
         </div>
       </div>
