@@ -6,7 +6,7 @@
   <div class="row">
   {{ if eq $align "left" }}
     <div class="col-xl-6 mt-4 align-self-center">
-      <img class="img-fluid mx-auto d-block" src="{{ $image }}" alt="{{ $title }}" title="{{ $title }}">
+      <img class="img-fluid mx-auto d-block px-4" src="{{ $image }}" alt="{{ $title }}" title="{{ $title }}">
     </div>
     <div class="col-xl-6">
       {{ .Inner | markdownify }}
@@ -16,7 +16,7 @@
       {{ .Inner | markdownify }}
     </div>
     <div class="col-xl-6 mt-4">
-      <img class="img-fluid mx-auto d-block" src="{{ $image }}" alt="{{ $title }}" title="{{ $title }}">
+      <img class="img-fluid mx-auto d-block px-4" src="{{ $image }}" alt="{{ $title }}" title="{{ $title }}">
     </div>
   {{ end }}
   </div>
