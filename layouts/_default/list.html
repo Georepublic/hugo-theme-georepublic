@@ -1,5 +1,5 @@
 {{ define "title" }}
-  {{ .Title }} | {{ .Site.Title }}
+  {{ .Title }} | {{ .Params.title }} | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
@@ -17,6 +17,21 @@
           {{ with .Params.abstract }}
           <p class="bd-lead py-3">{{ . }}</p>
           {{ end}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ if .Params.title }}
+  <div class="container py-5 text-center">
+    <div class="container pb-4">
+      <div class="row row-cols-1 g-4 justify-content-center">
+        <div class="col col-lg-10">
+          <h1 class="display-2">{{ .Params.title }}</h1>
+          {{ with .Params.abstract }}
+            {{ . | markdownify }}
+          {{ end }}
         </div>
       </div>
     </div>
