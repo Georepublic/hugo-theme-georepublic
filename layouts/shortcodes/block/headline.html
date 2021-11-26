@@ -1,0 +1,5 @@
+{{ $class := (.Get "class") | default "display-3" }}
+
+<p class="{{ $class }} mt-0">
+  {{ .Inner | markdownify }}
+</p>
