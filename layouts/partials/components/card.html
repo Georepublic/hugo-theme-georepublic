@@ -1,12 +1,22 @@
 <div class="col text-start mb-4">
   <div class="card card-animated shadow-sm border-0 h-100">
-    {{ with .Resources.ByType "image" }}
-      {{ range first 1 . }}
+    {{ if .Params.cover }}
+      {{ range .Resources.Match ((printf "%s" .Params.cover)) }}
         {{ $image := . }}
         {{ if ne .MediaType.SubType "svg" }}
           {{ $image = .Fill "640x320" }}
         {{ end }}
         <img class="card-img-top" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
+      {{ end }}
+    {{ else }}
+      {{ with .Resources.ByType "image" }}
+        {{ range first 1 . }}
+          {{ $image := . }}
+          {{ if ne .MediaType.SubType "svg" }}
+            {{ $image = .Fill "640x320" }}
+          {{ end }}
+          <img class="card-img-top" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" title="{{ .Title }}">
+        {{ end }}
       {{ end }}
     {{ end }}
 
