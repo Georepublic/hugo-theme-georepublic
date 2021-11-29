@@ -6,7 +6,7 @@
       {{ end }}
 
       <h3 class="mb-0">{{ .Title }}</h3>
-      <p class="card-text mb-auto mt-3">{{ .Params.abstract | default .Summary }}</p>
+      <p class="card-text mb-auto mt-3 line-clamp">{{ .Params.abstract | default .Summary }}</p>
     </div>
 
     <div class="card-footer border-0 bg-transparent">
