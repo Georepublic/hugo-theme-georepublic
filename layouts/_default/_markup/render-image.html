@@ -1,16 +1,14 @@
-<div class="container py-2">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-1">
-      <div class="col">
-        {{ if .Title }}
-          <figure>
-            <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" class="img-fluid">
-            <figcaption class="text-muted">{{ .Title }}</figcaption>
-          </figure>
-        {{ else }}
+<div class="container pt-2">
+  <div class="row row-cols-1 row-cols-md-1">
+    <div class="col">
+      {{ if .Title }}
+        <figure>
           <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" class="img-fluid">
-        {{ end }}
-      </div>
+          <figcaption class="text-muted text-truncate">{{ .Title }}</figcaption>
+        </figure>
+      {{ else }}
+        <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" class="img-fluid">
+      {{ end }}
     </div>
   </div>
 </div>

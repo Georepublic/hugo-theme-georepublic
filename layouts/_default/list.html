@@ -68,7 +68,7 @@
   </div>
 
   {{ if (isset .Params "callout") }}
-  <div class="p-5 mt-5 bg-theme-light">
+  <div class="px-3 py-5 bg-theme-light">
     {{ with .Params.callout }}
     {{ $name := . }}
     {{ partial $name . }}
