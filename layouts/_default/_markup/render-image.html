@@ -1,11 +1,11 @@
-<div class="container py-4">
+<div class="container py-2">
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+    <div class="row row-cols-1 row-cols-md-1">
       <div class="col">
         {{ if .Title }}
           <figure>
             <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" class="img-fluid">
-            <figcaption>{{ .Title }}</figcaption>
+            <figcaption class="text-muted">{{ .Title }}</figcaption>
           </figure>
         {{ else }}
           <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" class="img-fluid">
