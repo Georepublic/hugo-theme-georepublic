@@ -16,11 +16,11 @@
 
     <div class="container">
       <div class="row row-cols-1 row-cols-md-{{ .Site.Params.footer.columns | default .Site.Data.default.footer.columns }} g-4">
-        <div class="col text-center">
+        <div class="col text-center mt-2">
           <div class="card h-100 bg-transparent border-0">
             <div class="card-body">
               <p><img src="/images/logo-icon.svg" alt="{{ .Site.Title }}" title="{{ .Site.Title }}"></p>
-              <ul class="list-inline">
+              <ul class="list-inline mb-0">
                 {{ if .Site.IsMultiLingual }}
                 {{ range .AllTranslations }}
                   <li class="list-inline-item separator">
@@ -35,21 +35,19 @@
 
         {{ with .Site.Menus.bottom }}
         {{ range . }}
-        <div class="col">
+        <div class="col mt-2">
           <div class="card h-100 bg-transparent border-0">
             <div class="card-body">
               <h5 class="card-title text-uppercase border-bottom pb-2">{{ .Name }}</h5>
-              <p class="card-text mute">
-                {{ if .HasChildren }}
-                <ul class="list-unstyled">
-                  {{ range .Children }}
-                    <li class="mute"><a class="text-light" href="{{ .URL }}">{{ .Name }}</a></li>
-                  {{ end }}
-                </ul>
-                {{ else }}
-                {{/*  No items  */}}
+              {{ if .HasChildren }}
+              <ul class="list-unstyled mb-0">
+                {{ range .Children }}
+                  <li class="mute"><a class="text-light" href="{{ .URL }}">{{ .Name }}</a></li>
                 {{ end }}
-              </p>
+              </ul>
+              {{ else }}
+              {{/*  No items  */}}
+              {{ end }}
             </div>
           </div>
         </div>

@@ -9,13 +9,13 @@
 <main role="main" class="flex-shrink-0 mb-0">
 
   {{ if (isset .Params "cover") }}
-  <div class="p-5 mb-4 text-white bg-theme-dark banner-section" style="background-image: url('{{ .Params.cover }}')">
-    <div class="container py-3 text-left">
-      <div class="row row-cols-1 g-4 justify-content-left">
+  <div class="px-4 pt-4 pb-2 mb-4 text-white bg-theme-dark banner-section" style="background-image: url('{{ .Params.cover }}')">
+    <div class="container text-left">
+      <div class="row row-cols-1 g-4 justify-content-left py-md-5">
         <div class="col-xl-8 offset-md-1 py-3">
           <h1 class="bd-title mt-0 fw-bold">{{ .Title }}</h1>
           {{ with .Params.abstract }}
-          <p class="bd-lead py-3">{{ . }}</p>
+          <p class="bd-lead pt-3">{{ . }}</p>
           {{ end}}
         </div>
       </div>
@@ -25,10 +25,10 @@
 
   <article class="container">
 
-    <div class="container pb-4 text-start">
+    <div class="container pb-4 pt-md-4 text-start">
       <div class="container">
         <div class="row row-cols-1 g-4 justify-content-center">
-          <div class="col col-lg-{{ $columns }}">
+          <div class="col col-lg-{{ $columns }} px-0">
             {{ .Content }}
           </div>
           {{ if (isset .Params "gitinfo") }}
@@ -60,7 +60,7 @@
   </article>
 
   {{ if (isset .Params "callout") }}
-  <div class="px-3 py-5 bg-theme-light">
+  <div class="px-3 py-4 bg-theme-light">
     {{ with .Params.callout }}
     {{ $name := . }}
     {{ partial $name . }}
