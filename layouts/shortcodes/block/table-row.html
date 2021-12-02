@@ -1,0 +1,17 @@
+{{ $items := .Params }}
+
+<tr>
+  {{ range $items }}
+    {{ if eq . (index $items 0) }}
+      <th scope="row">{{ . }}</th>
+    {{ else if eq (index (split . "#") 0) "svg" }}
+      <td>
+        <svg class="bi" width="24" height="24">
+          <use xlink:href="#{{ index (split . `#`) 1 }}"></use>
+        </svg>
+      </td>
+    {{ else }}
+      <td>{{ . }}</td>
+    {{ end }}
+  {{ end }}
+</tr>

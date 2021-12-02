@@ -1,0 +1,21 @@
+{{ $class := (.Get "class") | default "" }}
+{{ $heads := (.Get "heads") | default "" }}
+{{ $width := (.Get "width") | default "34" }}
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    {{ with (.Get "caption") }}
+    <caption class="lead">{{ . }}</caption>
+    {{ end }}
+    <thead class="{{ $class }}">
+      <tr>
+        <th scope="col" style="width:{{ $width }}%;"></th>
+        {{ $list := split $heads "|" }}
+        {{ range $list }}
+          <th scope="col" style="width:{{ div (sub 100 (int $width)) (len $list) }}%;">{{ . }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    {{ .Inner }}
+  </table>
+</div>
