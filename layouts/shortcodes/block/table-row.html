@@ -3,15 +3,15 @@
 <tr>
   {{ range $items }}
     {{ if eq . (index $items 0) }}
-      <th scope="row">{{ . }}</th>
+      <th scope="row" class="fw-normal">{{ . }}</th>
     {{ else if eq (index (split . "#") 0) "svg" }}
-      <td>
+      <td class="text-muted">
         <svg class="bi" width="24" height="24">
-          <use xlink:href="#{{ index (split . `#`) 1 }}"></use>
+          <use xlink:href="#{{ index (split . `#`) 1 }}" stroke="blue"></use>
         </svg>
       </td>
     {{ else }}
-      <td>{{ . }}</td>
+      <td class="text-muted">{{ . }}</td>
     {{ end }}
   {{ end }}
 </tr>

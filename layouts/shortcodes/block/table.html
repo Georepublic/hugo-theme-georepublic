@@ -2,17 +2,21 @@
 {{ $heads := (.Get "heads") | default "" }}
 {{ $width := (.Get "width") | default "34" }}
 
+{{/* compute column width */}}
+{{ $list := split $heads "|" }}
+{{ $col1 := print "style=\"width:{{" $width "}}%;\"" }}
+{{ $coln := print "style=\"width:{{" (div (sub 100 (int $width)) (len $list)) "}}%;\"" }}
+
 <div class="table-responsive">
-  <table class="table table-hover">
+  <table class="table table-hover ">
     {{ with (.Get "caption") }}
     <caption class="lead">{{ . }}</caption>
     {{ end }}
-    <thead class="{{ $class }}">
+    <thead class="{{ $class }} border-top-0">
       <tr>
-        <th scope="col" style="width:{{ $width }}%;"></th>
-        {{ $list := split $heads "|" }}
+        <th scope="col" {{ $col1 }} class="fw-normal"></th>
         {{ range $list }}
-          <th scope="col" style="width:{{ div (sub 100 (int $width)) (len $list) }}%;">{{ . }}</th>
+          <th scope="col" {{ $coln }} class="fw-normal">{{ . }}</th>
         {{ end }}
       </tr>
     </thead>
