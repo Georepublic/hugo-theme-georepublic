@@ -14,7 +14,7 @@
       <div class="row row-cols-1 g-4 justify-content-left">
         <div class="col-xl-8 offset-md-1 py-3">
           <h1 class="bd-title mt-0 fw-bold">{{ .Title }}</h1>
-          {{ with .Params.abstract }}
+          {{ with .Params.description }}
           <p class="bd-lead py-3">{{ . }}</p>
           {{ end}}
         </div>
@@ -29,7 +29,7 @@
       <div class="row row-cols-1 g-4 justify-content-center">
         <div class="col col-lg-{{ sub $columns 1 }}">
           <h1 class="display-2 pb-2">{{ .Params.title }}</h1>
-          {{ with .Params.abstract }}
+          {{ with .Params.description }}
           <p class="lead">{{ . | markdownify }}</p>
           {{ end }}
         </div>

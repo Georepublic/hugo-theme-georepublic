@@ -31,7 +31,7 @@
       <div class="mb-2 text-muted">{{ .Params.date | time.Format ":date_long" }}</div>
       {{ end }}
 
-      <p class="card-text mt-3 line-clamp">{{ .Params.abstract | default .Summary }}</p>
+      <p class="card-text mt-3 line-clamp">{{ .Params.description | default .Summary }}</p>
     </div>
 
     <div class="card-footer border-0 bg-transparent">

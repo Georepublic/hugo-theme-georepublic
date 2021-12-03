@@ -21,9 +21,6 @@
     {{- with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end -}}
     {{- with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end -}}
 
-    {{- with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end -}}
-    {{- with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end -}}
-
     {{- partial "base/styles" . -}}
 
     {{ with .OutputFormats.Get "rss" -}}
