@@ -1,3 +1,5 @@
-<input type="hidden" value="{{ $.Site.Data.forms.chatbot.url }}" id="chatbotUrl" />
+{{ with $.Site.Data.forms.chatbot }}
+<input type="hidden" value="{{ .url }}" id="chatbotUrl" />
 <input type="hidden" value="{{ $.Site.Language.Lang | default `en` }}" id="chatbotLocale" />
-<input type="hidden" value="{{ index $.Site.Data.forms.chatbot.inbox $.Site.Language.Lang | default `unset` }}" id="chatbotToken" />
+<input type="hidden" value="{{ index .inbox $.Site.Language.Lang | default `unset` }}" id="chatbotToken" />
+{{ end }}
