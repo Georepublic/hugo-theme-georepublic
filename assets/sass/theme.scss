@@ -117,3 +117,8 @@ pre {
 table.table {
   caption-side: top;
 }
+
+.text-info {
+  --bs-text-opacity: 1;
+  color: $teal !important;
+}

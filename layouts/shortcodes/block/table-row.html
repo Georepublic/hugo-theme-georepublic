@@ -5,7 +5,7 @@
     {{ if eq . (index $items 0) }}
       <th scope="row" class="fw-normal">{{ . }}</th>
     {{ else if eq (index (split . "#") 0) "svg" }}
-      <td class="text-muted">
+      <td class="text-info">
         <svg class="bi" width="24" height="24">
           <use xlink:href="#{{ index (split . `#`) 1 }}" stroke="blue"></use>
         </svg>
