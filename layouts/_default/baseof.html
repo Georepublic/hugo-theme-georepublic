@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en-us" }}" class="h-100">
-  <head>
+  <head prefix=”og: http://ogp.me/ns#”>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     {{- partial "base/ldjson" . -}}
+    {{- partial "base/opengraph" . -}}
 
     <title>{{ block "title" . }}
       {{- .Site.Title -}}
@@ -15,7 +16,6 @@
 
     {{- template "_internal/google_analytics.html" . -}}
     {{- template "_internal/schema.html" . -}}
-    {{- template "_internal/opengraph.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
 
     {{- with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end -}}
