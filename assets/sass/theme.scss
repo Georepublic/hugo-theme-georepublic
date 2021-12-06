@@ -122,3 +122,21 @@ table.table {
   --bs-text-opacity: 1;
   color: $teal !important;
 }
+
+/**
+ * Hack to prevent overlay on forms for small screens
+ * https://github.com/twbs/bootstrap/issues/32800
+ */
+/* Floating label wrap fix */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  width: 150%;
+}
+
+.form-floating > label {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+}
