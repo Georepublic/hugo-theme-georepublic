@@ -10,5 +10,5 @@
 {{ if .Params.cover }}
 <meta property="og:image" content="{{ (print .Permalink .Params.cover) }}" />
 {{ else }}
-<meta property="og:image" content="{{ (print .Site.BaseURL `images/logo.svg`) }}" />
+<meta property="og:image" content="{{ (print .Site.BaseURL `images/logo.png`) }}" />
 {{ end }}
