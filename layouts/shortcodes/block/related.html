@@ -7,7 +7,7 @@
 {{ $pages := .Site.RegularPages.Related .Page | first $limit }}
 
 {{ with (.Get "section") }}
-  {{ $pages = $.Site.RegularPages.Reverse }}
+  {{ $pages = $.Site.RegularPages.ByDate.Reverse }}
   {{ $pages = (where (where $pages "Section" . ) "Permalink" "!=" $permalink)  | first $limit }}
 {{ end }}
 
