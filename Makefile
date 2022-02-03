@@ -13,6 +13,7 @@ build-js:
 	cp node_modules/feather-icons/dist/feather-sprite.svg $(STATIC_DIR)/elements/
 	cp node_modules/@fortawesome/fontawesome-free/sprites/* $(STATIC_DIR)/elements/fa-sprites/
 build-css:
+	mkdir -p $(ASSETS_DIR_CSS)
 	mkdir -p $(ASSETS_DIR_SASS)/bootstrap/
 	cp -r node_modules/bootstrap/scss/* $(ASSETS_DIR_SASS)/bootstrap/
 	cp node_modules/cookieconsent/build/cookieconsent.min.css $(ASSETS_DIR_CSS)
