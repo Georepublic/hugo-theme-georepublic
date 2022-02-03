@@ -1,6 +1,7 @@
+{{- $cc := resources.Get "css/vendor/cookieconsent.min.css" -}}
 {{- $styleSass := resources.Get "sass/main.scss" -}}
 {{- $styleCSS := $styleSass | resources.ToCSS (dict "targetPath" "css/style.css" "enableSourceMap" true) -}}
-{{- $styleMinified := $styleCSS | resources.Minify -}}
+{{- $styleMinified := slice $cc $styleCSS | resources.Concat "css/main.css" | resources.Minify -}}
 {{- $styleFingerpinted := $styleMinified | resources.Fingerprint -}}
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">

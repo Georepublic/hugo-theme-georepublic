@@ -23,9 +23,11 @@
 
     {{- partial "base/styles" . -}}
 
-    {{ with .OutputFormats.Get "rss" -}}
+    {{- with .OutputFormats.Get "rss" -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
+    {{- end -}}
+
+    {{- with .Site.Params.plausible -}}<script defer data-domain="{{ .dataDomain }}" src="{{ .serverUrl }}"></script>{{- end -}}
   </head>
 
   <body class="d-flex flex-column">

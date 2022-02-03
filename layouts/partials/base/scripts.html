@@ -2,6 +2,7 @@
 {{ $custom := resources.Get "js/custom.js" }}
 {{ $popperjs := resources.Get "js/vendor/popper.min.js" }}
 {{ $bootstrap := resources.Get "js/vendor/bootstrap.min.js" }}
-{{ $globalJS := slice $popperjs $bootstrap $theme $custom | resources.Concat "js/global.js" | resources.Minify | resources.Fingerprint }}
+{{ $cc := resources.Get "js/vendor/cookieconsent.min.js" }}
+{{ $globalJS := slice $popperjs $bootstrap $cc $theme $custom | resources.Concat "js/global.js" | resources.Minify | resources.Fingerprint }}
 
 <script src="{{ $globalJS.RelPermalink }}" integrity="{{ $globalJS.Data.Integrity }}" crossorigin="anonymous"></script>
