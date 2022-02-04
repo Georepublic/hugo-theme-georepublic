@@ -5,8 +5,14 @@
 {{ define "main" }}
 <main role="main" class="flex-shrink-0">
 
-  {{ if (isset .Params "banner") }}
-    {{ partial "banner" . }}
+  {{ if (isset .Params "cover") }}
+  <div class="px-4 pt-4 pb-2 mb-4 text-white bg-primary banner-section">
+    <div class="container pb-5 pt-md-1 pb-md-4">
+      <object type="image/svg+xml" class="pb-3" data="{{ .Params.cover }}" style="width:100%;">
+        <img src="{{ .Params.cover }}" class="pb-3" style="width:100%;" />
+      </object>
+    </div>
+  </div>
   {{ end }}
 
   <div class="container my-5">
