@@ -7,7 +7,7 @@
       <div class="container">
 
         <a class="navbar-brand" href="{{ .Site.BaseURL | relLangURL }}">
-          <img src="{{ `/images/logo.svg` | relURL }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}">
+          <img src="{{ `/images/logo.svg` | safeURL }}" alt="{{ .Site.Title }}" title="{{ .Site.Title }}">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
