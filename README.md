@@ -2,25 +2,25 @@
 
 ## Requirements
 
-Tested with Hugo `v0.83.0` or higher.
+Tested with Hugo `v0.109.0` or higher.
 
 ## Installation
 
 Add as Git submodule to a Hugo project directory:
 
-```
+```sh
 git submodule add git@github.com:Georepublic/hugo-theme-georepublic.git path/to/theme
 ```
 
 Update and initialize available submodules with:
 
-```
+```sh
 git submodule update --init --recursive
 ```
 
 Install dependencies with npm:
 
-```
+```sh
 cd path/to/theme
 npm i
 npm run build
@@ -28,7 +28,7 @@ npm run build
 
 Other commands:
 
-```
+```sh
 npm run clean
 ```
 
@@ -36,7 +36,7 @@ npm run clean
 
 Define custom theme parameters in `data/default.yaml` and use the following pattern to make them customizable as site parameters:
 
-```
+```sh
 {{ .Site.Params.color | default .Site.Data.default.color }}
 ```
 
